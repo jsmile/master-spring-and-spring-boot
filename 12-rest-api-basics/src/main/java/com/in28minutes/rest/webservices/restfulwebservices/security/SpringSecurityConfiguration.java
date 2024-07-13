@@ -14,6 +14,7 @@ public class SpringSecurityConfiguration {
       http
             .authorizeHttpRequests((authz) -> authz
 //                  .requestMatchers("/h2-console/**").permitAll()
+//                  .requestMatchers("/users/**").permitAll()
                   .requestMatchers("/jpa/**").permitAll()
                   .anyRequest().authenticated()
             )
