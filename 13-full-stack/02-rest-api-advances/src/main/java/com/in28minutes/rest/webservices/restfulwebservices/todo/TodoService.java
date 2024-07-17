@@ -1,7 +1,9 @@
 package com.in28minutes.rest.webservices.restfulwebservices.todo;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.function.Predicate;
 
 import org.springframework.stereotype.Service;
@@ -20,8 +22,20 @@ public class TodoService {
 				LocalDate.now().plusYears(11), false ));
 		todos.add(new Todo(++todosCount, "in28minutes","Learn Full Stack Development", 
 				LocalDate.now().plusYears(12), false ));
+		todos.add(new Todo(++todosCount, "jsmile","Develope a Srpring Boot Appilication",
+				LocalDate.now().plusYears(12), false ));
 	}
-	
+
+	public Set<String> getUserNames(){
+		Set<String> usernames = new HashSet<>();
+		if( !todos.isEmpty() ) {
+			for(Todo todo : todos) {
+				usernames.add( todo.getUsername() );
+			}
+		}
+		return usernames;
+	}
+
 	public List<Todo> findByUsername(String username){
 		Predicate<? super Todo> predicate = 
 				todo -> todo.getUsername().equalsIgnoreCase(username);
