@@ -11,7 +11,7 @@ import org.springframework.security.web.SecurityFilterChain;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
-@Configuration
+//@Configuration
 public class BasicAuthenticationSecurityConfiguration {
 	
 	//Filter chain
@@ -45,6 +45,7 @@ public class BasicAuthenticationSecurityConfiguration {
 	}
 */
 
+/* comments out Basic Authentication
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
       http.authorizeHttpRequests(
@@ -61,5 +62,6 @@ public class BasicAuthenticationSecurityConfiguration {
 
 		return http.build();
 	}
+*/
 
 }
